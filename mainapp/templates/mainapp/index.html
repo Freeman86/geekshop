@@ -1,0 +1,26 @@
+
+{% extends 'mainapp/base.html' %}
+
+     {% block title %}
+        {{ block.super }}
+         {% endblock %}
+
+
+
+    {% block container %}
+
+     {% include 'mainapp/includes/inc_main_menu.html' %}
+    
+    <h2 class="header1">Главная</h2>
+    
+    <hr><br><br><br>
+    
+    
+    <h1 class="hello" >3D Printing</h1><br><br><br>
+    
+    <h3 class="hello">Вас приветсвует магазин 3D печати!</h3><br><br><br>
+    
+    <hr>
+
+    {% endblock %}
+    

@@ -1,0 +1,47 @@
+{% extends 'mainapp/base.html' %}
+
+
+     {% block title %}
+        {{ block.super }} | Контакты
+        {% endblock %}
+
+     {% block container %}
+
+     {% include 'mainapp/includes/inc_main_menu.html' %}
+    
+    <h2 class="header1">Контакты</h2><br><br>
+    <hr>
+    {% for contact in contacts %}
+    <div style = "text-align: center;" >
+    <h3 >{{contact.city}}</h3><br>
+    <h4  >Телефон</h4><br>
+    <p   >{{contact.phone}}</p><br>
+        </div>
+    {% endfor %}
+
+    
+    <h3>Напишите нам!</h3><br><br>
+     <div class="conference">
+    <form action="#">
+    
+    Имя <input class="input" type="text" placeholder="Введите имя"><br><br>
+    Email <input class="Email" type="text" ><br><br>
+    Тема <input class="input" type="text" ><br><br>
+    
+   Текстовое поле: <br> 
+    <textarea ></textarea><br><br>
+    <button type="submit">Отправить</button>
+    <button type="reset">Удалить данные</button>
+    
+    </form><br>
+    <div  > 
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8837200cd09ea5da233d1489e1a0c48b668974b0cb1349574f02cfc3159ae41&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+    
+    </div>
+
+    {% endblock %}
+    
+     
+    
+

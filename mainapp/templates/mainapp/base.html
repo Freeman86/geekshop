@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <title>
+        {% block title %}
+        3D Printing
+         {% endblock %}
+    </title>
+    <meta charset="UTF-8">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     {% endblock %}
+    {% block js %}
+     {% endblock %}
+</head>
+<body >
+
+    <p>{% now "N j, Y, P" %}</p>
+
+    {% block container %}
+     
+    <h2 class="header1">Главная</h2>
+    
+    <hr><br><br><br>
+    
+    
+    <h1 class="hello" >3D Printing</h1><br><br><br>
+    
+    <h3 class="hello">Вас приветсвует магазин 3D печати!</h3><br><br><br>
+    <hr>
+    {% endblock %}
+   
+    <div class="footer">
+    <p >Все права защищены. &copy; 2018 год.</p>
+    </div>
+    
+    
+
+
+</body>
+</html>

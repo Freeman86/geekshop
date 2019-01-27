@@ -1,0 +1,44 @@
+{% extends 'mainapp/base.html' %}
+
+
+        {% block title %}
+        {{ block.super }} 
+         {% endblock %}
+
+
+    
+      {% block container %}
+    
+   
+    {% include 'mainapp/includes/inc_main_menu.html' %}
+
+    
+
+<h2 class="header1">Каталог товара</h2><br><br><br>
+    <hr><br><br>
+
+
+    
+    {% include 'mainapp/includes/inc_category_menu.html' %}
+    <div class="paginator">
+        {% if catalog.has_previous %}
+        <a href="{% url 'main:catalog' category_pk catalog.previous_page_number %}"><</a>
+        {% endif %}
+        <span class="current">
+            страница {{ catalog.number }} из {{ catalog.paginator.num_pages }}
+        </span>
+        {% if products.has_next %}
+        <a href="{% url 'main:catalog' category_pk products.next_page_number %}">></a>
+        {% endif %}
+    </div>
+    {% for item in catalog %}
+    <div >
+    <a href="{% url 'main:product' item.pk %}"><img class="img_product" src="/media/{{ item.image}}" alt="">
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.short_desc }}</p>
+    </a>
+
+    </div>
+{% endfor %}
+
+     {% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'mainapp/base.html' %}
+
+        {% block title %}
+        {{ page_title|title }}
+         {% endblock %}
+
+    {% block container %}
+
+     {% include 'mainapp/includes/inc_main_menu.html' %}
+    
+    <h2 class="header1">Конференция</h2>
+    <div class="conference">
+    <form action="#">
+    
+    <h3> Регистрация </h3>
+    
+    Имя <input class="input" type="text" placeholder="Введите имя"><br><br>
+    Пароль <input class="input" type="password" placeholder="Введите пароль"><br><br>
+    Дата рождения <input class="input" type="date"><br><br>
+    
+    Ваш пол:
+    
+    М<input type="radio" name="pol">
+    Ж<input type="radio" name="pol"><br><br>
+    
+    Ваш род занятий:
+    <select>
+        <option value="1">IT</option>
+         <option value="2">Производство</option>
+        <option value="3">Торговля</option>
+        <option value="4">Наука</option>
+        <option value="5">Другое</option>
+    </select><br><br>
+    О себе:<br> 
+    <textarea cols="30" rows="10"></textarea>
+    
+    
+    
+    <h4>Ваш принтер и дополнительное оборудование:</h4>
+   <label> <input type="checkbox">Anet A8<br></label>
+    <label><input type="checkbox">Anet A6<br></label>
+    <label><input type="checkbox">Другой</label><br><br>
+    
+    <button type="submit">Отправить</button>
+    <button type="reset">Удалить данные</button>
+    
+    
+    </form>
+    
+    </div>
+    
+    <hr>
+
+    {% endblock %}
+    
+

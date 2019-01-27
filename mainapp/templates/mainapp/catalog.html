@@ -1,0 +1,21 @@
+{% extends 'mainapp/base.html' %}
+
+        {% block title %}
+        {{ block.super }} | Каталог
+         {% endblock %}
+
+    {% block container %}
+
+     {% include 'mainapp/includes/inc_main_menu.html' %}
+
+    <h2 class="header1">Категории товара</h2><br><br><br>
+    <hr><br><br>
+    
+
+     {% include 'mainapp/includes/inc_category_menu.html' %}
+
+
+ {% endblock %}
+    
+   
+

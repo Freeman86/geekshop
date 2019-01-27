@@ -1,0 +1,43 @@
+{% extends 'mainapp/base.html' %}
+
+        {% block title %}
+        {{ block.super }} | Каталог
+         {% endblock %}
+
+
+{% block container %}
+   {% include 'mainapp/includes/inc_main_menu.html' %}
+
+
+    <h2 >Товар</h2><br><br><br>
+    <hr><br><br>
+
+        {% include 'mainapp/includes/inc_category_menu.html' %}
+
+        <div >
+
+                <div >
+                    <img class="img_product" src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                </div>
+
+
+
+            <div >
+                <h3 >{{ product.name }}</h3>
+                <br>
+                <p> {{ product.price }} <span>руб</span></p>
+                <a href="{% url 'basket:add' product.pk %}" class="red-button">
+                    заказать 
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+                <div >
+                    {{ product.description }}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+{% endblock %}
